@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF - 8">
+    <title>Edit Patient</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">Edit Patient</h1>
+    <form action="/patients/{id}" method="post" th:action="@{/patients/{id}(id=${patient.id})}">
+        <input type="hidden" name="id" th:value="${patient.id}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" id="name" name="name" th:value="${patient.name}" required class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" id="age" name="age" th:value="${patient.age}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender:</label>
+            <input type="text" id="gender" name="gender" th:value="${patient.gender}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="contact" class="form-label">Contact:</label>
+            <input type="text" id="contact" name="contact" th:value="${patient.contact}" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
